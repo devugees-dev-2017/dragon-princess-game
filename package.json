@@ -9,9 +9,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "readline-sync": "^1.4.7"
-  },
   "dependencies": {
     "readline-sync": "^1.4.7"
   },
