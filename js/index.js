@@ -5,15 +5,12 @@ var Decide = require('./answer').answer.Decide;
 var hero = require('./actions').Hero;
 var dragon = require('./actions').Dragon;
 
-var userWeapon = "";
+function onChooseWeapon(input) {
 
-function killDragon(input) {
-    //dragon.bark();
 
-    userWeapon = Decide(['Sword', 'Arrow', 'Hands'], input);
-    readline.close()
-    if (dragon.health > 0) {
-        //readline.close();
+    do {
+
+        var userWeapon = Decide('Choose your weapon', ['Sword', 'Arrow', 'Hands']);
 
         switch (userWeapon) {
             case "Sword":
@@ -47,6 +44,7 @@ function killDragon(input) {
             console.log("the dragon killed you ");
         }
     }
+    while (dragon.health > 0);
 }
 
 function askToKillDragon(input) {
@@ -56,8 +54,8 @@ function askToKillDragon(input) {
         case "y": ;
         case "Y":
             console.log('Really?');
-            hero.onFightDragon(killDragon);
-
+            readline.close();
+            hero.onFightDragon(onChooseWeapon);
             break;
         case "n": ;
         case "N":
