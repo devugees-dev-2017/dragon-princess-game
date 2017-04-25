@@ -44,7 +44,7 @@ function onChooseWeapon(input) {
             console.log("the dragon killed you ");
         }
     }
-    while (dragon.health > 0);
+    while (dragon.health > 0 && hero.health > 0);
 }
 
 function askToKillDragon(input) {
