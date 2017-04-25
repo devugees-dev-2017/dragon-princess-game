@@ -7,7 +7,9 @@ var rl = readline.createInterface({
 
 
 var prompt = function (message, callback) {
+  console.log(message);
   rl.on('line', callback);
+  return rl;
 }
 
 module.exports = prompt;

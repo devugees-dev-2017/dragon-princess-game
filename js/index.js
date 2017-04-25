@@ -1,3 +1,4 @@
+var readline;
 var prompt = require('./node-prompt');
 var YesNo = require('./answer');
 
@@ -6,12 +7,14 @@ function killDragon(input) {
     switch (YesNo(input)) {
         case "y": ;
         case "Y":
-            console.log('Really?')
+            console.log('Really?');
+            readline.close()
             break;
         case "n": ;
         case "N":
             console.log('Ok, then run!')
+            readline.close()
             break;
     }
 }
-prompt('Feel like killing a dragon today?', killDragon);
+readline = prompt('Feel like killing a dragon today?', killDragon);
